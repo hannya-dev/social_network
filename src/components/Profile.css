@@ -1,0 +1,13 @@
+.content {
+  grid-area: c;
+  background-color: darkkhaki;
+  border-radius: 3px;
+}
+.content .item {
+  color: greenyellow;
+}
+
+.hat {
+  border-radius: 3px;
+  min-width: 996px;
+}
