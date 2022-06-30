@@ -2,9 +2,6 @@
   grid-area: c;
   background-color: darkkhaki;
   border-radius: 3px;
-  .item {
-    color: greenyellow;
-  }
 }
 
 .hat {
