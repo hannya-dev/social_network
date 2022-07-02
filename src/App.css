@@ -10,3 +10,11 @@
   width: 1200px;
   margin: 0 auto;
 }
+
+.app-wrapper-content {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: c;
+  background-color: darkkhaki;
+  border-radius: 3px;
+}
