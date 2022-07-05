@@ -2,8 +2,14 @@
   grid-area: n;
   background-color: aquamarine;
   border-radius: 3px;
-
-  .item.active {
+  padding: 20px;
+  min-height: 500px;
+  max-height: 500px;
+  a {
+    color: white;
+    text-decoration: none;
+  };
+  .item a.active {
     color: grey;
-  }
-}
+  };
+};

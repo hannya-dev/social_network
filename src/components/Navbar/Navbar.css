@@ -2,7 +2,14 @@
   grid-area: n;
   background-color: aquamarine;
   border-radius: 3px;
+  padding: 20px;
+  min-height: 500px;
+  max-height: 500px;
 }
-.nav .item.active {
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+.nav .item a.active {
   color: grey;
 }
