@@ -16,10 +16,10 @@ import Settings from "./components/Settings/Settings";
 const App = () => {
     return (
         <BrowserRouter>
-            <div className="app-wrapper">
+            <div className="app_wrapper">
                 <Header/>
                 <Navbar/>
-                <div className="app-wrapper-content">
+                <div className="app_wrapper_content">
                     <Routes>
                         <Route path="/" element={<App/>}/>
                         <Route path="/news" element={<News/>}/>

@@ -1,4 +1,4 @@
-.app-wrapper {
+.app_wrapper {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "h h" "n c";
@@ -11,7 +11,7 @@
   margin: 0 auto;
 }
 
-.app-wrapper-content {
+.app_wrapper_content {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: c;

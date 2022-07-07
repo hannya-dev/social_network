@@ -3,23 +3,19 @@ $p10: 20px;
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
-
-  .dialogs-items {
+  .dialogs_items {
     padding: $p10;
-
-    .dialog {
-    }
   }
-
   .messages {
     padding: $p10;
-
-    .message {
-    }
   }
+  a {
+    color: #000000;
+    text-decoration: none;
+  };
 }
 
-.dialogs-items {
+.dialogs_items {
   .active {
     color: gray;
   }

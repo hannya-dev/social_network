@@ -3,7 +3,7 @@ import './Post.css'
 
 const Post = (props) => {
     return (
-        <div className="post-item">
+        <div className="post_item">
             <img src="https://s0.rbk.ru/v6_top_pics/media/img/4/74/756256715374744.jpg" alt="No image"/>
             {props.message}
             <div>

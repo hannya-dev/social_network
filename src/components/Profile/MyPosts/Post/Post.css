@@ -1,7 +1,7 @@
-.post-item {
+.post_item {
   color: greenyellow;
 }
-.post-item img {
+.post_item img {
   width: 50px;
   height: 43px;
   border-radius: 50%;

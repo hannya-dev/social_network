@@ -4,12 +4,17 @@
   -ms-grid-columns: 2fr 10fr;
   grid-template-columns: 2fr 10fr;
 }
-.dialogs .dialogs-items {
+.dialogs .dialogs_items {
   padding: 20px;
 }
 .dialogs .messages {
   padding: 20px;
 }
-.dialogs-items .active {
+.dialogs a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.dialogs_items .active {
   color: gray;
 }
