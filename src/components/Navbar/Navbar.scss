@@ -9,7 +9,11 @@
     color: white;
     text-decoration: none;
   };
-  .item a.active {
+  .item {
+    margin: 8px 5px 5px 5px;
+    a.active {
     color: grey;
+    };
   };
 };
+

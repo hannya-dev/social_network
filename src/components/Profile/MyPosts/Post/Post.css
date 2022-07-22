@@ -1,8 +1,8 @@
 .post_item {
-  color: greenyellow;
+  color: #000;
 }
 .post_item img {
-  width: 50px;
-  height: 43px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
 }

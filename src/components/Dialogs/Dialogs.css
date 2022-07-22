@@ -1,3 +1,7 @@
+textarea {
+  margin: 10px 0 0 0;
+}
+
 .dialogs {
   display: -ms-grid;
   display: grid;

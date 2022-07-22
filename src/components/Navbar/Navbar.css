@@ -10,6 +10,9 @@
   color: white;
   text-decoration: none;
 }
+.nav .item {
+  margin: 8px 5px 5px 5px;
+}
 .nav .item a.active {
   color: grey;
 }
