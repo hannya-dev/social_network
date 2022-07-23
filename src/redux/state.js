@@ -35,12 +35,12 @@ export const addPost = () => {
 
     state.profilePage.posts.unshift(newPost);
     state.profilePage.newPostText = "";
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 };
 
 export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
-    rerenderEntireTree()
+    rerenderEntireTree(state)
 };
 
 export const sendMessage = () => {
@@ -52,12 +52,12 @@ export const sendMessage = () => {
 
     state.dialogsPage.messages.push(newMessage);
     state.dialogsPage.newMessage = "";
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 };
 
 export const updateNewMessage = (newMessage) => {
     state.dialogsPage.newMessage = newMessage;
-    rerenderEntireTree()
+    rerenderEntireTree(state)
 };
 
 export const subscribe = (observer) => {
