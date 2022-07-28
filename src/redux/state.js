@@ -1,3 +1,8 @@
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const SEND_MESSAGE = "SEND-MESSAGE";
+const UPDATE_NEW_MESSAGE = "UPDATE-NEW-MESSAGE";
+
 let store = {
     _state: {
         profilePage: {
@@ -59,6 +64,11 @@ let store = {
         };
     },
 };
+
+export const addPostActionCreator = () => ({ type: ADD_POST });
+export const updateNewPostTextActionCreator = (newText) => ({ type: UPDATE_NEW_POST_TEXT, newText });
+export const sendMessageActionCreator = () => ({ type: SEND_MESSAGE});
+export const onMessageChangeActionCreator = (newMessage) => ({type: UPDATE_NEW_MESSAGE, newMessage});
 
 export default store;
 window.store = store;
