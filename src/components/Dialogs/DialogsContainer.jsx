@@ -5,8 +5,6 @@ import Dialogs from "./Dialogs";
 
 const DialogsContainer = (props) => {
 
-    debugger
-
     let state = props.store.getState();
 
     let sendMessage = () => {
