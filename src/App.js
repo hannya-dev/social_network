@@ -13,20 +13,19 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-const App = (props) => {
-    debugger
+const App = () => {
     return (
         <BrowserRouter>
             <div className="app_wrapper">
-                <Header/>
-                <Navbar/>
+                <Header />
+                <Navbar />
                 <div className="app_wrapper_content">
                     <Routes>
-                        <Route path="/news" element={<News/>}/>
-                        <Route path="/profile" element={<Profile store={props.store}/>}/>
-                        <Route path="/dialogs" element={<DialogsContainer store={props.store}/>}/>
-                        <Route path="/music" element={<Music/>}/>
-                        <Route path="/settings" element={<Settings/>}/>
+                        <Route path="/news" element={<News />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/dialogs" element={<DialogsContainer />} />
+                        <Route path="/music" element={<Music />} />
+                        <Route path="/settings" element={<Settings />} />
                     </Routes>
                 </div>
             </div>
