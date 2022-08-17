@@ -1,0 +1,9 @@
+.wrapper {
+  padding: 10px 0 0 10px;
+}
+.wrapper .userPhoto {
+  width: 100px;
+}
+.wrapper .buttonFollow, .wrapper .buttonUnfollow {
+  width: 100px;
+}
