@@ -1,12 +1,13 @@
 import React from "react";
-import "./ProfileInfo.css"
+import "./ProfileInfo.css";
+import profileHat from "../../../assets/image/profileHat.jpg"
 
 const ProfileInfo = () => {
     return (
         <div>
             <div>
                 <img
-                    src="https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300"
+                    src={profileHat}
                     alt="hat" className="hat"/>
             </div>
             <div className="description_block">
