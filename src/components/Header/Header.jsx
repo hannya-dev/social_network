@@ -1,10 +1,11 @@
 import React from "react";
 import "./Header.css";
+import logoImage from "../../assets/image/logo.png"
 
 const Header = () => {
     return (
         <header className="header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Zeronet_logo.png" alt="logo"/>
+            <img src={logoImage} alt="logo"/>
         </header>
     )
 };

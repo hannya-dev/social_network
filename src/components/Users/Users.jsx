@@ -1,22 +1,25 @@
+import * as axios from "axios";
 import React from "react"
 import "./Users.css";
+import userPhoto from "../../assets/image/userImage.png";
 
 const Users = (props) => {
-    if (props.users.length === 0) {
-        props.setUsers([
-            { id: 1, photoUrl: "https://img.freepik.com/premium-vector/hannya-japanese-mask_43623-252.jpg?w=300", followed: false, fullName: "Svetlana", status: "Resting", location: { city: "Chelyabinsk", country: "Russia" } },
-            { id: 2, photoUrl: "https://img.freepik.com/premium-vector/hannya-japanese-mask_43623-252.jpg?w=300", followed: true, fullName: "Anna", status: "Draw", location: { city: "Saint-Petersburg", country: "Russia" } },
-            { id: 3, photoUrl: "https://img.freepik.com/premium-vector/hannya-japanese-mask_43623-252.jpg?w=300", followed: false, fullName: "Nikita", status: "Programming", location: { city: "Chelyabinsk", country: "Russia" } },
-            { id: 4, photoUrl: "https://img.freepik.com/premium-vector/hannya-japanese-mask_43623-252.jpg?w=300", followed: true, fullName: "Sergei", status: "Resting", location: { city: "Chelyabinsk", country: "Russia" } },
-            { id: 5, photoUrl: "https://img.freepik.com/premium-vector/hannya-japanese-mask_43623-252.jpg?w=300", followed: true, fullName: "Tatiana", status: "Working", location: { city: "Chelyabinsk", country: "Russia" } },
-        ])
+
+    let getUsers = () => {
+        if (props.users.length === 0) {
+            axios
+                .get("https://social-network.samuraijs.com/api/1.0/users")
+                .then(response => {
+                    props.setUsers(response.data.items)
+                });
+        }
     };
 
     return <div className="wrapper">
         {props.users.map(u => <div key={u.id}>
             <span>
                 <div>
-                    <img src={u.photoUrl} alt="photo" className="userPhoto" />
+                    <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="photo" className="userPhoto" />
                 </div>
                 <div>
                     {u.followed
@@ -26,17 +29,17 @@ const Users = (props) => {
             </span>
             <span>
                 <span>
-                    <div>{u.fullName}</div>
+                    <div>{u.name}</div>
                     <div>status: {u.status}</div>
                 </span>
                 <span>
-                    <div>country: {u.location.country}</div>
-                    <div>city: {u.location.city}</div>
+                    {/* <div>country: {u.location.country}</div>
+                    <div>city: {u.location.city}</div> */}
                 </span>
             </span>
         </div>)}
         <div>
-            <button>Update Users</button>
+            <button onClick={getUsers}>Get users</button>
         </div>
     </div>
 }
