@@ -3,45 +3,42 @@ import React from "react"
 import "./Users.css";
 import userPhoto from "../../assets/image/userImage.png";
 
-const Users = (props) => {
+class Users extends React.Component {
 
-    let getUsers = () => {
-        if (props.users.length === 0) {
-            axios
-                .get("https://social-network.samuraijs.com/api/1.0/users")
-                .then(response => {
-                    props.setUsers(response.data.items)
-                });
-        }
-    };
+    componentDidMount() {
+        axios
+            .get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            });
+    }
 
-    return <div className="wrapper">
-        {props.users.map(u => <div key={u.id}>
-            <span>
-                <div>
-                    <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="photo" className="userPhoto" />
-                </div>
-                <div>
-                    {u.followed
-                        ? <button onClick={() => { props.unfollow(u.id) }} className="buttonUnfollow">Unfollow</button>
-                        : <button onClick={() => { props.follow(u.id) }} className="buttonFollow">Follow</button>}
-                </div>
-            </span>
-            <span>
+    render() {
+        return <div className="wrapper">
+            {this.props.users.map(u => <div key={u.id}>
                 <span>
-                    <div>{u.name}</div>
-                    <div>status: {u.status}</div>
+                    <div>
+                        <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="photo" className="userPhoto" />
+                    </div>
+                    <div>
+                        {u.followed
+                            ? <button onClick={() => { this.props.unfollow(u.id) }} className="buttonUnfollow">Unfollow</button>
+                            : <button onClick={() => { this.props.follow(u.id) }} className="buttonFollow">Follow</button>}
+                    </div>
                 </span>
                 <span>
-                    {/* <div>country: {u.location.country}</div>
+                    <span>
+                        <div>{u.name}</div>
+                        <div>status: {u.status}</div>
+                    </span>
+                    <span>
+                        {/* <div>country: {u.location.country}</div>
                     <div>city: {u.location.city}</div> */}
+                    </span>
                 </span>
-            </span>
-        </div>)}
-        <div>
-            <button onClick={getUsers}>Get users</button>
+            </div>)}
         </div>
-    </div>
-}
+    }
+};
 
 export default Users;
