@@ -7,3 +7,7 @@
 .wrapper .buttonFollow, .wrapper .buttonUnfollow {
   width: 100px;
 }
+.wrapper .selectedPage {
+  font-weight: bold;
+  font-size: 17px;
+}
