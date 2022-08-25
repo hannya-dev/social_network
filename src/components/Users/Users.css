@@ -1,13 +1,23 @@
 .wrapper {
-  padding: 10px 0 0 10px;
+  padding: 10px 0 0 15px;
+}
+.wrapper .users-wrapper {
+  padding: 5px 0 0 0;
 }
 .wrapper .userPhoto {
   width: 100px;
 }
-.wrapper .buttonFollow, .wrapper .buttonUnfollow {
+.wrapper .buttonFollow,
+.wrapper .buttonUnfollow {
   width: 100px;
 }
-.wrapper .selectedPage {
+.wrapper .pagesNumber {
+  padding: 5px 0 0 0;
+}
+.wrapper .pagesNumber span + span {
+  padding: 0 0 0 3px;
+}
+.wrapper .pagesNumber .selectedPage {
   font-weight: bold;
   font-size: 17px;
 }
