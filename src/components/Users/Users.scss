@@ -1,16 +1,29 @@
-.wrapper {
-    padding: 10px 0 0 10px;
+$pt: 5px 0 0 0;
 
+.wrapper {
+    padding: 10px 0 0 15px;
+
+    .users-wrapper {
+        padding: $pt;
+    }
+    
     .userPhoto {
         width: 100px;
     }
 
-    .buttonFollow, .buttonUnfollow {
+    .buttonFollow,
+    .buttonUnfollow {
         width: 100px;
     }
 
-    .selectedPage {
-        font-weight: bold;
-        font-size: 17px;
+    .pagesNumber {
+        padding: $pt;
+        span+span {
+            padding: 0 0 0 3px;
+        }
+        .selectedPage {
+            font-weight: bold;
+            font-size: 17px;
+        }
     }
 }
