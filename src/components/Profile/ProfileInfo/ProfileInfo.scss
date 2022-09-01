@@ -1,8 +1,14 @@
+$m10: 10px;
+
 .hat {
   border-radius: 3px;
   min-width: 996px;
 }
 
 .description_block {
-  padding: 10px;
+  margin: $m10;
+}
+
+.users-info-text {
+  margin: $m10;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Users.css";
 import userPhoto from "../../assets/image/userImage.png";
+import { NavLink } from "react-router-dom";
 
 let Users = (props) => {
 
@@ -12,16 +13,21 @@ let Users = (props) => {
         pages.push(i);
     }
 
+    let onClickFollow = (id) => props.follow(id);
+    let onClickUnfollow = (id) => props.unfollow(id);
+
     return <div className="wrapper">
         {props.users.map(u => <div key={u.id} className="users-wrapper">
             <span className="usersPhoto">
                 <div>
-                    <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="userPhoto" className="userPhoto" />
+                    <NavLink to={"/profile/" + u.id}>
+                        <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="userPhoto" className="userPhoto" />
+                    </NavLink>
                 </div>
                 <div>
                     {u.followed
-                        ? <button onClick={() => { props.unfollow(u.id) }} className="buttonUnfollow">Unfollow</button>
-                        : <button onClick={() => { props.follow(u.id) }} className="buttonFollow">Follow</button>}
+                        ? <button onClick={() => onClickUnfollow(u.id)} className="buttonUnfollow">Unfollow</button>
+                        : <button onClick={() => onClickFollow(u.id)} className="buttonFollow">Follow</button>}
                 </div>
             </span>
             <span className="usersInfo">
