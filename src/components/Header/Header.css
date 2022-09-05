@@ -1,10 +1,21 @@
 .header {
-  display: block;
-  grid-area: h;
-  background-color: darkcyan;
-  padding: 5px 0 0 0;
-  border-radius: 5px;
+    display: block;
+    grid-area: h;
+    background-color: darkcyan;
+    padding: 5px 0 0 0;
+    border-radius: 5px;
 }
+
 .header img {
-  width: 50px;
+    width: 50px;
+}
+
+.header .login-block {
+    float: right;
+    margin: 15px 10px 15px 15px;
+}
+
+.header .login-block a {
+    text-decoration: none;
+    color: #fff;
 }
