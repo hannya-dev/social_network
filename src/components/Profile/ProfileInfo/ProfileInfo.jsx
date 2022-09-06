@@ -2,11 +2,12 @@ import React from "react";
 import "./ProfileInfo.css";
 import profileHat from "../../../assets/image/profileHat.jpg"
 import Preloader from "../../common/Preloader/Preloader";
+import userImage from "../../../assets/image/userImage.png"
 
 const ProfileInfo = (props) => {
 
     if (!props.profile) {
-        return <Preloader />
+        return <Preloader/>
     }
 
     return (
@@ -14,10 +15,12 @@ const ProfileInfo = (props) => {
             <div>
                 <img
                     src={profileHat}
-                    alt="hat" className="hat" />
+                    alt="hat" className="hat"/>
             </div>
             <div className="description_block">
-                <img src={props.profile.photos.large} alt="photosUsers" />
+                {props.profile.photos.large
+                    ? <img src={props.profile.photos.large} alt="photosUsers"/>
+                    : <img src={userImage} alt="photosUsers"/>}
             </div>
             <div className="users-info-text">
                 <div className="aboutMe">
@@ -51,7 +54,7 @@ const ProfileInfo = (props) => {
                     </div>
                 </div>
                 <div>
-                    <span>looking for a job: {props.profile.lookingForAJob ? "true" : "false" }</span>
+                    <span>looking for a job: {props.profile.lookingForAJob ? "true" : "false"}</span>
                 </div>
                 <div>
                     <span>looking for a job description: {props.profile.lookingForAJobDescription}</span>
