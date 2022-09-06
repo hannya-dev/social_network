@@ -7,6 +7,10 @@ $m10: 10px;
 
 .description_block {
   margin: $m10;
+  img {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .users-info-text {
