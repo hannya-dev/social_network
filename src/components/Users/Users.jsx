@@ -15,17 +15,21 @@ let Users = (props) => {
     }
 
     let onClickFollow = (id) => {
+        props.toogleFollowingProgress(true, id);
         usersApi.followUsers(id).then(data => {
             if (data.resultCode === 0) {
                 props.follow(id);
             }
+            props.toogleFollowingProgress(false, id);
         });
     }
     let onClickUnfollow = (id) => {
+        props.toogleFollowingProgress(true, id);
         usersApi.unfollowUsers(id).then(data => {
             if (data.resultCode === 0) {
                 props.unfollow(id);
             }
+            props.toogleFollowingProgress(false, id);
         });
     };
 
@@ -40,8 +44,8 @@ let Users = (props) => {
                 </div>
                 <div>
                     {u.followed
-                        ? <button onClick={() => onClickUnfollow(u.id)} className="buttonUnfollow">Unfollow</button>
-                        : <button onClick={() => onClickFollow(u.id)} className="buttonFollow">Follow</button>}
+                        ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => onClickUnfollow(u.id)} className="buttonUnfollow">Unfollow</button>
+                        : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => onClickFollow(u.id)} className="buttonFollow">Follow</button>}
                 </div>
             </span>
             <span className="usersInfo">
