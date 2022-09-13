@@ -2,7 +2,6 @@ import React from "react";
 import "./Users.css";
 import userPhoto from "../../assets/image/userImage.png";
 import {NavLink} from "react-router-dom";
-import {usersApi} from "../../api/api";
 
 let Users = (props) => {
 
@@ -13,25 +12,6 @@ let Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-
-    let onClickFollow = (id) => {
-        props.toogleFollowingProgress(true, id);
-        usersApi.followUsers(id).then(data => {
-            if (data.resultCode === 0) {
-                props.follow(id);
-            }
-            props.toogleFollowingProgress(false, id);
-        });
-    }
-    let onClickUnfollow = (id) => {
-        props.toogleFollowingProgress(true, id);
-        usersApi.unfollowUsers(id).then(data => {
-            if (data.resultCode === 0) {
-                props.unfollow(id);
-            }
-            props.toogleFollowingProgress(false, id);
-        });
-    };
 
     return <div className="wrapper">
         {props.users.map(u => <div key={u.id} className="users-wrapper">
@@ -44,8 +24,10 @@ let Users = (props) => {
                 </div>
                 <div>
                     {u.followed
-                        ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => onClickUnfollow(u.id)} className="buttonUnfollow">Unfollow</button>
-                        : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => onClickFollow(u.id)} className="buttonFollow">Follow</button>}
+                        ? <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                  onClick={() => props.unfollow(u.id)} className="buttonUnfollow">Unfollow</button>
+                        : <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                  onClick={() => props.follow(u.id)} className="buttonFollow">Follow</button>}
                 </div>
             </span>
             <span className="usersInfo">
