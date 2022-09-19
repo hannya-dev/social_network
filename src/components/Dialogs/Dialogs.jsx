@@ -2,12 +2,11 @@ import React from "react";
 import './Dialogs.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {Redirect} from "react-router";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />);
-    let messagesElements = props.dialogsPage.messages.map(m => <Message key={m.id} id={m.id} message={m.message} />);
+    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem key={d.id} id={d.id} name={d.name}/>);
+    let messagesElements = props.dialogsPage.messages.map(m => <Message key={m.id} id={m.id} message={m.message}/>);
 
     let newMessageElement = React.createRef();
 
@@ -20,8 +19,6 @@ const Dialogs = (props) => {
         props.onMessageChange(newMessage);
     };
 
-    if (!props.isAuth) return <Redirect to="/login"/>;
-
     return (
         <div className="dialogs">
             <div className="dialogs_items">
@@ -33,7 +30,7 @@ const Dialogs = (props) => {
                 </div>
                 <div>
                     <textarea onChange={onMessageChange}
-                        ref={newMessageElement} value={props.dialogsPage.newMessage} />
+                              ref={newMessageElement} value={props.dialogsPage.newMessage}/>
                 </div>
                 <div>
                     <button onClick={sendMessage}>Send</button>
