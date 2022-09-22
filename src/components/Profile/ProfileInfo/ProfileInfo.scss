@@ -1,18 +1,27 @@
 $m10: 10px;
+$wh300: 300px;
+
+.users-info {
+  display: grid;
+  grid-template-columns: repeat(2, 320px);
+  grid-template-areas: "photo info";
+  margin: $m10;
+
+  .description_block {
+    grid-area: photo;
+  }
+
+  .description_block img {
+    width: $wh300;
+    height: $wh300;
+  }
+
+  .users-info-text {
+    grid-area: info;
+  }
+}
 
 .hat {
   border-radius: 3px;
   min-width: 996px;
-}
-
-.description_block {
-  margin: $m10;
-  img {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-.users-info-text {
-  margin: $m10;
 }

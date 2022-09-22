@@ -1,16 +1,30 @@
+.users-info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (320px) [ 2 ];
+    grid-template-columns: repeat(2, 320px);
+    grid-template-areas: "photo info";
+    margin: 10px;
+}
+
+.users-info .description_block {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: photo;
+}
+
+.users-info .description_block img {
+    width: 300px;
+    height: 300px;
+}
+
+.users-info .users-info-text {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: info;
+}
+
 .hat {
-  border-radius: 3px;
-  min-width: 996px;
-}
-
-.description_block {
-  margin: 10px;
-}
-.description_block img {
-  width: 300px;
-  height: 300px;
-}
-
-.users-info-text {
-  margin: 10px;
+    border-radius: 3px;
+    min-width: 996px;
 }
