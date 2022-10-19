@@ -22,9 +22,24 @@ export const usersApi = {
             .then(response => response.data)
     },
     getProfile(userId) {
+        console.log('Obsoloted method. Please profileApi object.');
+        return profileApi.getProfile(userId);
+    },
+}
+
+export const profileApi = {
+    getProfile(userId) {
         return instance.get(`profile/` + userId)
             .then(response => response.data)
     },
+    getStatus(userId) {
+        return instance.get('profile/status/' + userId)
+            .then(response => response.data)
+    },
+    updateStatus(status) {
+        return instance.put('profile/status/', {status})
+            .then(response => response.data);
+    }
 }
 
 export const authApi = {
