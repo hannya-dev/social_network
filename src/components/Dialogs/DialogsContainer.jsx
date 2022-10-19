@@ -2,7 +2,6 @@ import './Dialogs.css';
 import {onMessageChange, sendMessage} from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux/es/exports";
-import React from "react";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
 
